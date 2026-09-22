@@ -24,8 +24,6 @@
             line-height: 1.6;
         }
 
-        /* HEADER */
-
         header {
             position: sticky;
             top: 0;
@@ -54,8 +52,6 @@
         nav a:hover {
             color: #777;
         }
-
-        /* HERO */
 
         .hero {
             min-height: 70vh;
@@ -111,7 +107,10 @@
             transform: translateY(-2px);
         }
 
-        /* PREISE */
+        .button.dark {
+            background: #1d1d1d;
+            color: white;
+        }
 
         .prices {
             padding: 90px 7%;
@@ -130,6 +129,7 @@
 
         .prices h2,
         .about h2,
+        .instagram h2,
         .contact h2 {
             font-size: clamp(36px, 5vw, 55px);
             margin-bottom: 45px;
@@ -164,8 +164,6 @@
             font-size: 42px;
         }
 
-        /* ABOUT */
-
         .about {
             padding: 100px 7%;
             text-align: center;
@@ -180,7 +178,19 @@
             margin: auto;
         }
 
-        /* CONTACT */
+        .instagram {
+            padding: 100px 7%;
+            background: #1d1d1d;
+            color: white;
+            text-align: center;
+        }
+
+        .instagram p {
+            color: #ccc;
+            font-size: 18px;
+            max-width: 600px;
+            margin: -20px auto 10px;
+        }
 
         .contact {
             padding: 100px 7%;
@@ -203,9 +213,15 @@
             margin-bottom: 5px;
         }
 
-        .contact a.phone {
+        .contact a.phone,
+        .contact a.address {
             color: #222;
             text-decoration: none;
+        }
+
+        .contact a.address:hover,
+        .contact a.phone:hover {
+            text-decoration: underline;
         }
 
         .contact .button {
@@ -213,7 +229,12 @@
             color: white;
         }
 
-        /* FOOTER */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
         footer {
             padding: 30px;
@@ -222,8 +243,6 @@
             color: #aaa;
             font-size: 14px;
         }
-
-        /* HANDY */
 
         @media (max-width: 700px) {
 
@@ -259,6 +278,7 @@
 
             .prices,
             .about,
+            .instagram,
             .contact {
                 padding: 70px 6%;
             }
@@ -274,12 +294,11 @@
     <nav>
         <a href="#preise">Preise</a>
         <a href="#ueber-uns">Über uns</a>
+        <a href="#instagram">Instagram</a>
         <a href="#kontakt">Kontakt</a>
     </nav>
 </header>
 
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -293,7 +312,9 @@
             Dein Style. Dein Schnitt. Deine Kopfsache.
         </div>
 
-        <a class="button" href="tel:01776694912">
+        <a class="button"
+           href="https://www.instagram.com/kopfsache_peine/"
+           target="_blank">
             Termin anfragen
         </a>
 
@@ -301,8 +322,6 @@
 
 </section>
 
-
-<!-- PREISE -->
 
 <section class="prices" id="preise">
 
@@ -332,8 +351,6 @@
 </section>
 
 
-<!-- ÜBER UNS -->
-
 <section class="about" id="ueber-uns">
 
     <div class="section-label">Kopfsache Friseur</div>
@@ -349,7 +366,25 @@
 </section>
 
 
-<!-- KONTAKT -->
+<section class="instagram" id="instagram">
+
+    <div class="section-label">Social Media</div>
+
+    <h2>Folge Kopfsache</h2>
+
+    <p>
+        Entdecke aktuelle Styles, Schnitte und Neuigkeiten
+        auf Instagram.
+    </p>
+
+    <a class="button"
+       href="https://www.instagram.com/kopfsache_peine/"
+       target="_blank">
+        Instagram besuchen
+    </a>
+
+</section>
+
 
 <section class="contact" id="kontakt">
 
@@ -361,9 +396,15 @@
 
         <div class="contact-item">
             <strong>Adresse</strong>
-            Braunschweiger Str. 19<br>
-            31226 Peine
+
+            <a class="address"
+               href="https://www.google.com/maps/search/?api=1&query=Braunschweiger+Str.+19,+31226+Peine"
+               target="_blank">
+                Braunschweiger Str. 19<br>
+                31226 Peine
+            </a>
         </div>
+
 
         <div class="contact-item">
             <strong>Telefon</strong>
@@ -372,16 +413,30 @@
                 0177 6694912
             </a>
         </div>
-	
-	<div class="contact-item">
-    <strong>Öffnungszeiten</strong>
-    Montag – Samstag: 10:00 – 19:00 Uhr<br>
-    Sonntag: geschlossen
-	</div>
 
-        <a class="button" href="tel:01776694912">
-            Jetzt anrufen
-        </a>
+
+        <div class="contact-item">
+            <strong>Öffnungszeiten</strong>
+
+            Montag – Samstag: 10:00 – 19:00 Uhr<br>
+            Sonntag: geschlossen
+        </div>
+
+
+        <div class="contact-buttons">
+
+            <a class="button"
+               href="tel:01776694912">
+                Jetzt anrufen
+            </a>
+
+            <a class="button"
+               href="https://www.instagram.com/kopfsache_peine/"
+               target="_blank">
+                Instagram
+            </a>
+
+        </div>
 
     </div>
 
