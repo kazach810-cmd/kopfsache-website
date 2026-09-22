@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kopfsache Friseur</title>
+    <title>Kopfsache Friseur | Peine</title>
 
     <style>
         * {
@@ -13,108 +13,254 @@
             padding: 0;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f5f2;
-            color: #222;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f3ef;
+            color: #1d1d1d;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
         header {
-            padding: 25px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: white;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e5e2dd;
         }
 
-        header h1 {
-            font-size: 26px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         nav a {
-            margin-left: 25px;
+            margin-left: 28px;
             text-decoration: none;
             color: #222;
+            font-size: 15px;
         }
 
-        .prices {
-            padding: 70px 8%;
+        nav a:hover {
+            color: #777;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: #222;
+            padding: 80px 7%;
+            background:
+                linear-gradient(rgba(20,20,20,0.68), rgba(20,20,20,0.68)),
+                url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
             color: white;
         }
 
-        .prices h2 {
-            font-size: 52px;
-            margin-bottom: 40px;
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero p {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            margin: auto;
+            font-size: 18px;
+            color: #e7e7e7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 28px;
+            background: white;
+            color: #1d1d1d;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* PREISE */
+
+        .prices {
+            padding: 90px 7%;
+            background: #1d1d1d;
+            color: white;
+            text-align: center;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+
+        .prices h2,
+        .about h2,
+        .contact h2 {
+            font-size: clamp(36px, 5vw, 55px);
+            margin-bottom: 45px;
         }
 
         .price-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            max-width: 1000px;
+            max-width: 1050px;
             margin: auto;
         }
 
         .price {
-            background: white;
-            color: #222;
-            padding: 30px;
-            border-radius: 15px;
+            background: #fff;
+            color: #1d1d1d;
+            padding: 38px 25px;
+            border-radius: 8px;
+            transition: 0.25s;
+        }
+
+        .price:hover {
+            transform: translateY(-6px);
         }
 
         .price h3 {
-            font-size: 22px;
+            font-size: 21px;
             margin-bottom: 15px;
         }
 
         .price strong {
-            font-size: 30px;
+            font-size: 42px;
         }
 
-        section {
-            padding: 70px 8%;
+        /* ABOUT */
+
+        .about {
+            padding: 100px 7%;
             text-align: center;
+            max-width: 900px;
+            margin: auto;
         }
 
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+        .about p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: auto;
         }
+
+        /* CONTACT */
 
         .contact {
+            padding: 100px 7%;
             background: white;
+            text-align: center;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 25px;
-            background: #222;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
+        .contact-info {
+            max-width: 600px;
+            margin: auto;
         }
+
+        .contact-item {
+            margin: 22px 0;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact a.phone {
+            color: #222;
+            text-decoration: none;
+        }
+
+        .contact .button {
+            background: #1d1d1d;
+            color: white;
+        }
+
+        /* FOOTER */
 
         footer {
-            padding: 25px;
+            padding: 30px;
             text-align: center;
-            background: #222;
-            color: white;
+            background: #1d1d1d;
+            color: #aaa;
+            font-size: 14px;
         }
 
+        /* HANDY */
+
         @media (max-width: 700px) {
-            .price-grid {
-                grid-template-columns: 1fr;
+
+            header {
+                padding: 17px 5%;
+            }
+
+            .logo {
+                font-size: 19px;
             }
 
             nav {
                 display: none;
             }
 
-            .prices h2 {
-                font-size: 40px;
+            .hero {
+                min-height: 75vh;
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero-text {
+                font-size: 16px;
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .prices,
+            .about,
+            .contact {
+                padding: 70px 6%;
             }
         }
     </style>
@@ -123,7 +269,7 @@
 <body>
 
 <header>
-    <h1>Kopfsache Friseur</h1>
+    <div class="logo">KOPFSACHE</div>
 
     <nav>
         <a href="#preise">Preise</a>
@@ -133,27 +279,52 @@
 </header>
 
 
-<!-- PREISE GANZ OBEN -->
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p>Friseur in Peine</p>
+
+        <h1>Kopfsache</h1>
+
+        <div class="hero-text">
+            Dein Style. Dein Schnitt. Deine Kopfsache.
+        </div>
+
+        <a class="button" href="tel:01776694912">
+            Termin anfragen
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- PREISE -->
 
 <section class="prices" id="preise">
+
+    <div class="section-label">Unsere Preise</div>
 
     <h2>PREISE</h2>
 
     <div class="price-grid">
 
         <div class="price">
+            <h3>Kinder</h3>
+            <strong>10 €</strong>
+        </div>
+
+        <div class="price">
             <h3>Haarschnitt</h3>
-            <strong>XX €</strong>
+            <strong>15 €</strong>
         </div>
 
         <div class="price">
-            <h3>Waschen & Schneiden</h3>
-            <strong>XX €</strong>
-        </div>
-
-        <div class="price">
-            <h3>Färben</h3>
-            <strong>XX €</strong>
+            <h3>Haare + Bart</h3>
+            <strong>25 €</strong>
         </div>
 
     </div>
@@ -161,34 +332,58 @@
 </section>
 
 
-<section id="ueber-uns">
+<!-- ÜBER UNS -->
 
-    <h2>Über Kopfsache</h2>
+<section class="about" id="ueber-uns">
+
+    <div class="section-label">Kopfsache Friseur</div>
+
+    <h2>Dein Style im Mittelpunkt.</h2>
 
     <p>
-        Willkommen bei Kopfsache Friseur.
-        Hier stehen persönliche Beratung,
-        moderne Schnitte und dein Style im Mittelpunkt.
+        Willkommen bei Kopfsache Friseur in Peine.
+        Wir stehen für saubere Schnitte, persönliche Beratung
+        und einen Style, mit dem du dich wohlfühlst.
     </p>
 
 </section>
 
 
+<!-- KONTAKT -->
+
 <section class="contact" id="kontakt">
 
-    <h2>Kontakt</h2>
+    <div class="section-label">Kontakt</div>
 
-    <p>Du möchtest einen Termin vereinbaren?</p>
+    <h2>Termin vereinbaren</h2>
 
-    <a class="button" href="#">
-        Termin anfragen
-    </a>
+    <div class="contact-info">
+
+        <div class="contact-item">
+            <strong>Adresse</strong>
+            Braunschweiger Str. 19<br>
+            31226 Peine
+        </div>
+
+        <div class="contact-item">
+            <strong>Telefon</strong>
+
+            <a class="phone" href="tel:01776694912">
+                0177 6694912
+            </a>
+        </div>
+
+        <a class="button" href="tel:01776694912">
+            Jetzt anrufen
+        </a>
+
+    </div>
 
 </section>
 
 
 <footer>
-    © Kopfsache Friseur
+    © 2026 Kopfsache Friseur · Peine
 </footer>
 
 </body>
